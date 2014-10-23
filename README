@@ -54,7 +54,7 @@ The backend has ATF unit tests.  To run these:
 
 There are also some functional tests, in the form of shell scripts, scattered
 in the tests/ directory.  Generally these will require you to use the test
-repo (at timeof writing, http://www-student.cs.york.ac.uk/~mbw500/testrepo/).
+repo (which is currently down and needs recreating--TODO!).
 Make sure PackageKit is using pkgng as its backend.
 
 --------------------------------------------------------------------------------
