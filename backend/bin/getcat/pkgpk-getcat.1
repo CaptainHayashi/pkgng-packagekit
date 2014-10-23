@@ -1,0 +1,53 @@
+.\" Copyright (C) 2013 Matt Windsor <mattbw@FreeBSD.org>
+.\"
+.\" Licensed under the GNU General Public License Version 2
+.\"
+.\" This program is free software; you can redistribute it and/or modify
+.\" it under the terms of the GNU General Public License as published by
+.\" the Free Software Foundation; either version 2 of the License, or
+.\" (at your option) any later version.
+.\"
+.\" This program is distributed in the hope that it will be useful,
+.\" but WITHOUT ANY WARRANTY; without even the implied warranty of
+.\" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+.\" GNU General Public License for more files.
+.\"
+.\" You should have received a copy of the GNU General Public License
+.\" along with this program; if not, write to the Free Software
+.\" Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+.\"-----------------------------------------------------------------------------
+.Dd July 7, 2013
+.Dt pkgpk-getcat 1
+.Os
+.\"-----------------------------------------------------------------------------
+.Sh NAME
+.Nm pkgpk-getcat
+.Nd return PackageKit category for a pkgng port origin
+.\"-----------------------------------------------------------------------------
+.Sh SYNOPSIS
+.Nm
+.Ar origin
+.\"-----------------------------------------------------------------------------
+.Sh DESCRIPTION
+.Nm
+is a debug utility for investigating the mapping between ports directories and 
+PackageKit categories as part of the PackageKit pkgng backend.
+It returns the descriptive name of the category that matches the directory of
+the port origin given on the command line.
+.Pp
+.Ar origin
+is expected to be a package origin, that is a port category directory followed
+by a slash and then a port name.  For the purposes of
+.Nm
+the actual port/package name may be empty, but the slash must always exist.
+.Pp
+The result is always written on one line to standard output.
+.\"-----------------------------------------------------------------------------
+.Sh AUTHORS
+.An Matt Windsor Aq mattbw@FreeBSD.org
+.\"-----------------------------------------------------------------------------
+.Sh BUGS
+If the backend cannot find a match for a port directory, it will return
+.Ql unknown
+instead.  This includes the case in which a directory has been supplied without
+a trailing slash.

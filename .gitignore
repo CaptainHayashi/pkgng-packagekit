@@ -1,0 +1,8 @@
+*.so
+*.So
+*.po
+*.o
+*.core
+*.swo
+*.swp
+a.out

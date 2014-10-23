@@ -1,0 +1,7 @@
+Content-Type: application/X-atf-atffile; version="1"
+
+prop: test-suite = "main"
+
+tp: namever_test
+tp: pkgutils_test
+tp: repo_test

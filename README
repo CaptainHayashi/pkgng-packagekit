@@ -1,0 +1,77 @@
+PackageKit backend for pkgng
+http://wiki.freebsd.org/SummerOfCode2013/pkgPackagekit
+--------------------------------------------------------------------------------
+
+This is a PackageKit backend for the FreeBSD pkgng package manager.
+
+It is licenced under the GNU General Public License version 2+ (this is because
+it links to PackageKit itself, which is under this licence).
+
+--------------------------------------------------------------------------------
+
+REQUIREMENTS
+
+- PackageKit (currently building against version 0.6.11; the code MAY work with
+  versions 0.7.x but WILL NOT YET work with 0.8.x due to API incompatibilities)
+- pkgng (currently building against version 1.1.3; higher versions might work)
+- FreeBSD (tested with 9.1; should work with higher versions)
+- For the tests, atf (devel/atf) is needed to compile and run the unit tests.
+
+Tested primarily with clang in C11 mode and GCC in GNU99 mode.
+C89 and normal C99 mode will not work.
+
+--------------------------------------------------------------------------------
+
+COMPILING
+
+This backend currently builds using the BSD make system.  Using GNU Make (gmake)
+will *not* work.  (Porting to GNU Autotools is an exercise for the reader.)
+
+To compile and install the backend:
+  - Ensure you have the correct versions of PackageKit and pkgng installed as
+    directed above.
+  - Run `make`, or some variation thereon, in the 'backend' directory.
+    (I prefer to run `scan-build --use-cc=clang33 make` with WARNS=7 set, but
+    this involves clang33 being installed.)
+  - Run `make install` as root to install the backend into PackageKit's backends
+    directory.
+  - If you have ATF/kyua installed, run `make tests` to create the tests.
+  - Edit /usr/local/PackageKit/PackageKit.conf such that "DefaultBackend=pkgng"
+    (or manually invoke packagekitd with backend=pkgng).
+
+One can also use the Makefile in the root directory; this will build the
+backend as well as any utilities and tests included with it.
+
+--------------------------------------------------------------------------------
+
+TESTING
+
+The backend has ATF unit tests.  To run these:
+  - Install ATF or kyua (should be in FreeBSD ports);
+  - Run `make tests` in the backend directory;
+  - Run `atf-run | atf-report` in the backend, backend/query and backend/jobs
+    directories.
+
+There are also some functional tests, in the form of shell scripts, scattered
+in the tests/ directory.  Generally these will require you to use the test
+repo (at timeof writing, http://www-student.cs.york.ac.uk/~mbw500/testrepo/).
+Make sure PackageKit is using pkgng as its backend.
+
+--------------------------------------------------------------------------------
+
+KNOWN BUGS
+
+- Behaviour when a repository has multiple versions of a package is currently
+  ill-defined (the first one in the iterator will be emitted).  This requires
+  further work. 
+- Minor cosmetic issues (progress bars not updating properly, etc.) may exist.
+- Some options to actions (recursion in GetDetails, repo signing requirements,
+  etc) are not yet implemented.
+- Cancel is not implemented.
+
+--------------------------------------------------------------------------------
+
+CONTACT DETAILS
+
+Student:	Matt Windsor <mattbw@FreeBSD.org>
+Mentor:		Julien Laffaye <jlaffaye@FreeBSD.org>

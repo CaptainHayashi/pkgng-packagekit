@@ -1,0 +1,75 @@
+# $FreeBSD$
+# Mapping from ports directories to PackageKit group enums.
+# (See /usr/local/include/PackageKit/packagekit-glib2/pk-enum.h)
+#
+# This file does not have to be in alphabetical order, but it would help.
+# It will be processed into group-map.c during a make.
+#
+# '#' starts a line comment as usual; any form of whitespace can separate the
+# port directory from its group enum.
+
+# Port dir	Group enum			Comments
+accessibility	PK_GROUP_ENUM_ACCESSIBILITY
+arabic		PK_GROUP_ENUM_LOCALIZATION
+archivers	PK_GROUP_ENUM_ACCESSORIES
+astro		PK_GROUP_ENUM_SCIENCE
+audio		PK_GROUP_ENUM_MULTIMEDIA
+benchmarks	PK_GROUP_ENUM_PROGRAMMING
+biology		PK_GROUP_ENUM_SCIENCE
+cad		PK_GROUP_ENUM_SCIENCE		# dubious
+chinese		PK_GROUP_ENUM_LOCALIZATION
+comms		PK_GROUP_ENUM_COMMUNICATION
+converters	PK_GROUP_ENUM_ACCESSORIES	# dubious
+databases	PK_GROUP_ENUM_SERVERS		# dubious 
+deskutils	PK_GROUP_ENUM_ACCESSORIES
+devel		PK_GROUP_ENUM_PROGRAMMING
+distfiles	PK_GROUP_ENUM_OTHER		# ??
+dns		PK_GROUP_ENUM_NETWORK
+editors		PK_GROUP_ENUM_OFFICE		# dubious 
+emulators	PK_GROUP_ENUM_OTHER		# ?? 
+finance		PK_GROUP_ENUM_OFFICE		# dubious 
+french		PK_GROUP_ENUM_LOCALIZATION
+ftp		PK_GROUP_ENUM_NETWORK
+games		PK_GROUP_ENUM_GAMES
+german		PK_GROUP_ENUM_LOCALIZATION
+graphics	PK_GROUP_ENUM_GRAPHICS
+hebrew		PK_GROUP_ENUM_LOCALIZATION
+hungarian	PK_GROUP_ENUM_LOCALIZATION
+irc		PK_GROUP_ENUM_COMMUNICATION
+japanese	PK_GROUP_ENUM_LOCALIZATION
+java		PK_GROUP_ENUM_PROGRAMMING
+korean		PK_GROUP_ENUM_LOCALIZATION
+lang		PK_GROUP_ENUM_PROGRAMMING
+mail		PK_GROUP_ENUM_COMMUNICATION
+math		PK_GROUP_ENUM_SCIENCE
+misc		PK_GROUP_ENUM_OTHER
+multimedia	PK_GROUP_ENUM_MULTIMEDIA
+net		PK_GROUP_ENUM_NETWORK
+net-im		PK_GROUP_ENUM_COMMUNICATION
+net-mgmt	PK_GROUP_ENUM_NETWORK
+net-p2p		PK_GROUP_ENUM_NETWORK		# possibly COMMUNICATION
+news		PK_GROUP_ENUM_COMMUNICATION	# ??
+packages	PK_GROUP_ENUM_OTHER		# ??
+palm		PK_GROUP_ENUM_OTHER
+polish		PK_GROUP_ENUM_LOCALIZATION
+ports-mgmt	PK_GROUP_ENUM_ADMIN_TOOLS	# dubious?
+portuguese	PK_GROUP_ENUM_LOCALIZATION
+print		PK_GROUP_ENUM_OFFICE		# dubious
+russian		PK_GROUP_ENUM_LOCALIZATION
+science		PK_GROUP_ENUM_SCIENCE
+security	PK_GROUP_ENUM_SECURITY
+shells		PK_GROUP_ENUM_ACCESSORIES	# dubious
+sysutils	PK_GROUP_ENUM_ADMIN_TOOLS
+textproc	PK_GROUP_ENUM_PUBLISHING	# dubious
+ukrainian	PK_GROUP_ENUM_LOCALIZATION
+vietnamese	PK_GROUP_ENUM_LOCALIZATION
+www		PK_GROUP_ENUM_NETWORK		# could be COMMUNICATION
+x11		PK_GROUP_ENUM_DESKTOP_OTHER
+x11-clocks	PK_GROUP_ENUM_DESKTOP_OTHER
+x11-drivers	PK_GROUP_ENUM_DESKTOP_OTHER
+x11-fm		PK_GROUP_ENUM_DESKTOP_OTHER
+x11-fonts	PK_GROUP_ENUM_FONTS
+x11-servers	PK_GROUP_ENUM_DESKTOP_OTHER
+x11-themes	PK_GROUP_ENUM_DESKTOP_OTHER
+x11-toolkits	PK_GROUP_ENUM_DESKTOP_OTHER
+x11-wm		PK_GROUP_ENUM_DESKTOP_OTHER

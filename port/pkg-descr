@@ -1,0 +1,6 @@
+This is an experimental PackageKit backend for pkgng, the FreeBSD next
+generation package manager.  In conjunction with PackageKit frontends such as
+Apper and GPackageKit, it allows for maintenance of the pkgng system inside a
+graphical user environment.
+
+WWW: http://wiki.FreeBSD.org/SummerOfCode2013/pkgPackagekit

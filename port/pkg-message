@@ -1,0 +1,14 @@
+In order to enable this backend by default, you will need to change the file
+%%PREFIX%%/etc/PackageKit/PackageKit.conf, replacing the line:
+
+< DefaultBackend=ports
+
+with:
+
+> DefaultBackend=pkgng
+
+Otherwise, PackageKit will default to using the ports backend unless you
+explicitly launch packagekitd with a different backend.
+
+To use PackageKit, don't forget to enable dbus (for example, by adding
+dbus_enable="yes" to /etc/rc.conf, or `service dbus start`).
